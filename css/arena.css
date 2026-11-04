@@ -1,0 +1,254 @@
+/* Общие стили страницы: темный фон и центрирование игры по центру экрана */
+body {
+  background-image: url('https://cdn.wallpapersafari.com/6/19/cio7CF.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Использование min-height решает проблемы с прокруткой в Safari iOS */
+  min-height: -webkit-fill-available;
+  margin: 0;
+  -webkit-text-size-adjust: 100%; /* Запрещает Safari автоматически увеличивать шрифт */
+}
+
+html {
+  height: -webkit-fill-available;
+}
+#hero-info{
+  display: flex;
+  flex-direction: column; /* Элементы идут друг под другом */
+  align-items: center;
+  gap: 10px; /* Расстояние между аватаркой и текстом */
+}
+#ava-hero{
+  background-color: #111; /* Темный фон круга */
+  border-radius: 50%; /* Делает элемент идеально круглым */
+  width: 70px; /* Ширина иконки */
+  height: 70px; /* Высота иконки */
+  display: flex;
+  justify-content: center; /* Центрируем эмодзи по горизонтали */
+  align-items: center; /* Центрируем эмодзи по вертикали */
+  font-size: 35px; /* Размер самого эмодзи (монстра) */
+  border: 2px solid #555; /* Серая рамка вокруг аватара */
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8); /* Внутренняя тень для эффекта углубления */
+}
+
+/* Карточка арены: контейнер, объединяющий все элементы интерфейса игры */
+.game-cont {
+  backdrop-filter: blur(15px); /*карточка станет полупрозрачной, а сквозь нее будет красиво проглядывать фоновая картинка!*/
+/*  background-color: #2a2a2a; /* Цвет фона карточки (чуть светлее общего фона) */
+  padding: 30px; /* Внутренние отступы со всех сторон */
+  border-radius: 15px; /* Скругление углов карточки */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Мягкая тень для объема */
+  display: flex;
+  flex-direction: column; /* Выстраиваем элементы внутри карточки вертикально */
+  align-items: center; /* Выравниваем элементы по центру */
+  gap: 20px; /* Отступ между элементами внутри карточки */
+  width: 320px; /* Фиксированная ширина карточки */
+  border: 1px solid #444; /* Тонкая рамка */
+}
+
+/* Блок информации о боссе (аватар, имя, уровень, здоровье) */
+#boss-info {
+  display: flex;
+  flex-direction: column; /* Элементы идут друг под другом */
+  align-items: center;
+  gap: 10px; /* Расстояние между аватаркой и текстом */
+}
+
+/* Аватар монстра (иконка эмодзи) */
+#avatar {
+  background-color: #111; /* Темный фон круга */
+  border-radius: 50%; /* Делает элемент идеально круглым */
+  width: 70px; /* Ширина иконки */
+  height: 70px; /* Высота иконки */
+  display: flex;
+  justify-content: center; /* Центрируем эмодзи по горизонтали */
+  align-items: center; /* Центрируем эмодзи по вертикали */
+  font-size: 35px; /* Размер самого эмодзи (монстра) */
+  border: 2px solid #555; /* Серая рамка вокруг аватара */
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8); /* Внутренняя тень для эффекта углубления */
+}
+
+/* Имя босса */
+#hero-name{
+  font-size: 20px;
+  font-weight: bold; /* Делаем текст жирным */
+  color: #ffcc00; /* Золотистый оттенок, чтобы подчеркнуть значимость босса */
+}
+#boss-name {
+  font-size: 20px;
+  font-weight: bold; /* Делаем текст жирным */
+  color: #ffcc00; /* Золотистый оттенок, чтобы подчеркнуть значимость босса */
+}
+#hero-lvl{
+  color: #aaa; /* Серый цвет текста */
+  font-size: 14px;
+  margin-left: 8px; /* Небольшой отступ от имени */
+  background-color: #333; /* Фон-плашка для уровня */
+  padding: 2px 6px; /* Внутренние отступы плашки */
+  border-radius: 4px; /* Скругление плашки */
+}
+
+/* Уровень босса */
+#boss-lvl {
+  color: #aaa; /* Серый цвет текста */
+  font-size: 14px;
+  margin-left: 8px; /* Небольшой отступ от имени */
+  background-color: #333; /* Фон-плашка для уровня */
+  padding: 2px 6px; /* Внутренние отступы плашки */
+  border-radius: 4px; /* Скругление плашки */
+}
+#hero-hp{
+  font-size: 16px;
+  color: #ff5555; /* Красный цвет, ассоциирующийся с жизнями/уроном */
+  font-weight: bold;
+
+}
+
+/* Текстовое отображение здоровья (например, "100hp") */
+#boss-hp {
+  font-size: 16px;
+  color: #ff5555; /* Красный цвет, ассоциирующийся с жизнями/уроном */
+  font-weight: bold;
+}
+
+/* Полоса здоровья (прогресс-бар) */
+#hp-bar {
+  height: 25px; /* Высота полоски */
+  width: 100%; /* Растягиваем на всю ширину карточки */
+  border-radius: 12px; /* Скругление краев полосы */
+  overflow: hidden; /* Скрываем всё, что вылезает за границы скругления */
+  border: none;
+}
+
+/* Кастомизация фона полосы здоровья для браузеров на движках WebKit (Chrome, Safari, Edge) */
+#hp-bar::-webkit-progress-bar {
+  background-color: #111; /* Темный цвет пустой части шкалы */
+  border-radius: 12px;
+}
+
+/* Кастомизация заполненной части полосы здоровья */
+#hp-bar::-webkit-progress-value {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b); /* Красно-оранжевый градиент */
+  border-radius: 12px;
+  transition: width 0.3s ease; /* Плавная анимация уменьшения полоски при получении урона */
+}
+
+/* Кнопка атаки */
+#atck-btn {
+  background: linear-gradient(90deg, #11998e, #38ef7d); /* Сочный зелено-бирюзовый градиент */
+  color: #fff; /* Белый цвет текста */
+  border: none; /* Убираем стандартную рамку */
+  padding: 12px 20px; /* Внутренние отступы (делаем кнопку крупной и удобной) */
+  width: 100%; /* На всю ширину карточки */
+  border-radius: 8px; /* Скругление углов кнопки */
+  cursor: pointer; /* Меняем курсор на руку при наведении */
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.1s ease, opacity 0.2s; /* Плавные анимации при наведении и нажатии */
+}
+#skill{
+  background: linear-gradient(90deg, #FF2400, #8B00FF); /* Сочный зелено-бирюзовый градиент */
+  color: #black; /* Белый цвет текста */
+  border: none; /* Убираем стандартную рамку */
+  padding: 12px 20px; /* Внутренние отступы (делаем кнопку крупной и удобной) */
+  width: 100%; /* На всю ширину карточки */
+  border-radius: 8px; /* Скругление углов кнопки */
+  cursor: pointer; /* Меняем курсор на руку при наведении */
+  font-weight: bolder;
+  font-size: 16px;
+  transition: transform 0.15s ease, opacity 0.4s; /* Плавные анимации при наведении и нажатии */
+}
+#skill:hover{
+  opacity: 0.6;
+}
+#skill:active{
+  transform: scale(1.0);
+}
+/* Эффект при наведении курсора на кнопку */
+#atck-btn:hover {
+  opacity: 0.9; /* Легкое затемнение */
+}
+
+/* Эффект при клике на кнопку (нажатие) */
+#atck-btn:active {
+  transform: scale(0.97); /* Кнопка чуть-чуть сжимается внутрь, имитируя реальное нажатие */
+}
+
+/* Лог боя (текстовое поле для сообщений о победе, уроне и критах) */
+#battle-log {
+  background-color: #1a1a1a; /* Темный фон для контраста */
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box; /* Учитываем отступы внутри общей ширины */
+  font-size: 13px;
+  color: #ccc; /* Светло-серый текст, не бьющий по глазам */
+  text-align: center; /* Центрируем текст сообщений */
+  min-height: 40px; /* Минимальная высота, чтобы блок не дергался при смене текста */
+  border: 1px solid #333; /* Тонкая рамка */
+}
+@keyframes flash { /*будет слегка смещать аватар босса в сторону или менять его цвет при получении урона.*/
+    0% { transform: scale(1); }
+    50% { transform: scale(0.85) rotate(-5deg); background-color: #ff416c; } /* В момент удара уменьшаемся, наклоняемся и краснеем */
+    100% { transform: scale(1); }
+}
+.shake{
+  animation: flash 0.3s ease; /* Запускаем нашу анимацию длительностью 0.3 секунды */
+}
+#rain{
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+
+}
+.rain{
+  background: linear-gradient(transparent, rgba(0, 255, 128, 0.4), rgba(20, 50, 30, 0.8));
+  width: 2px;
+  height: 20px;
+  position: absolute;
+ animation: fall 0.7s linear infinite;
+}
+@keyframes fall {
+  0% { transform: translateY(-20px)}
+  100% { transform: translateY(105vh);}
+}
+button{
+  touch-action: manipulation; /* Убирает задержку в 300мс при клике на телефоне */
+    -webkit-tap-highlight-color: transparent; /* Убирает серое выделение при нажатии в Safari */
+}
+/* Стили только для мобильных экранов */
+@media (max-width: 769px) {
+  /* Перестраиваем арену вертикально: сначала босс, под ним герой */
+    .arena-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    /* Увеличиваем кнопки, чтобы удобно попадать пальцем */
+    #atck-btn, #skill {
+        width: 90%;
+        min-height: 50px;
+        font-size: 1.1rem;
+        margin: 5px 0;
+    }
+
+    /* Уменьшаем шрифты лога и заголовков, чтобы все влезало без скролла */
+    #battle-log {
+        font-size: 0.9rem;
+        max-height: 120px;
+        padding: 10px;
+    }
+
+    /* Скейлим картинки/аватары под узкий экран */
+    #avatar, #ava-hero {
+        width: 120px;
+        height: 120px;
+    }
+}

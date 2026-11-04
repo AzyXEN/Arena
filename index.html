@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Boss Fight</title>
+    <link rel="stylesheet" href="css/arena.css">
+  </head>
+  <body>
+    <div id="rain">
+
+    </div>
+    <div class="game-cont">
+    <header><h1>Арена: Логово Гуля</h1></header>
+    <main>
+      <div id="hero-info">
+        <div id="ava-hero">🧝</div>
+        <p><span id="hero-name">AzyXEN</span>: <span id="hero-hp">100hp</span></p>
+        <p><span id="hero-lvl">Уровень героя: 1</span></p>
+      </div>
+      <div id="boss-info">
+        <div id="avatar">👹</div>
+        <p><span id="boss-name">TrisScary</span><span id="boss-lvl"></span></p>
+        <p><span id="boss-hp">100hp</span></p>
+<div id="wins-container">Побед: <span id="win">0</span></div>
+      </div>
+      <progress value="100" max="100" id="hp-bar">0%</progress>
+      <button id="atck-btn" type="button" name="dmgbutton">Атаковать!</button>
+      <button id="skill" type="button" name="skillbutton">⚡ Огненный шар!</button>
+      <div id="battle-log">
+
+
+      </div>
+    </main>
+  </div>
+<script src="JS/arena.js"></script>
+  </body>
+</html>
